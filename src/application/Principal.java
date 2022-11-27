@@ -10,13 +10,13 @@ import java.util.stream.Collectors;
 public class Principal {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        List<Funcionarios> funcionarios = new ArrayList<>();
+        List<Funcionarios> funcionarios = new ArrayList<>(); // declaração da lista da classe Funcionarios
         int userChoice;
         System.out.printf("%n%s%n%s%n%s%n%s%n%s%n%s%n", "MENU#", "1 - CADASTRAR", "2 - LISTAR", "3 - BUSCAR", "4 - EXCLUIR", "5 - SAIR");
-        do {
+        do {//loop para repetição do menu
             System.out.println();
             userChoice = input.nextInt();
-            switch (userChoice) {
+            switch (userChoice) { //estrutura condicional para naveação do menu
                 case 1:
                     System.out.printf("%nDigite o numero da matricula: ");
                     int matricula = input.nextInt();
@@ -45,13 +45,13 @@ public class Principal {
                     if (funcionarios != null) {
                         System.out.println("Digite o numero da matricula: ");
                         int matBusca = input.nextInt();
-                        /* converte a list pra stream, realiza uma operação lambida e retorna para list*/
+                        /* converte a list pra stream, realiza uma operação lambda e retorna para list*/
                         List<Funcionarios> resultado = funcionarios.stream().filter(x -> x.getMatricula() == matBusca).collect(Collectors.toList());
                         System.out.printf("%s",resultado);
                     } else
                         System.out.println("NENHUM FUNCIONARIO CADASTRADO!!");
                     break;
-                case 4:/* realiza uma busca e exclui o item correspondente*/
+                case 4:/* realiza uma busca atravez de uma expressão lambda e exclui o item correspondente*/
                     if (funcionarios != null) {
                         System.out.println("Digite o numero da matricula: ");
                         int matBusca = input.nextInt();
@@ -60,12 +60,13 @@ public class Principal {
                         System.out.println("NENHUM FUNCIONARIO CADASTRADO!!");
 
                 default:
+                    System.out.println("Digite um comando valido!");
                     break;
 
             }
             System.out.format("%n%-10s%n%-10s%n%-10s%n%-10s%n%-10s%n%-10s%n", "MENU#", "1 - CADASTRAR", "2 - LISTAR", "3 - BUSCAR", "4 - EXCLUIR", "5 - SAIR");
         } while (userChoice != 5);
-
+        System.out.println("Sistema encerrado pelo Usuario");
 
         input.close();
     }
