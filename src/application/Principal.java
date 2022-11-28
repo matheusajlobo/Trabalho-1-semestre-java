@@ -75,8 +75,14 @@ public class Principal {
                     if (!funcionarios.isEmpty()) {
                         List<Funcionarios> resultado = funcionarios.stream().filter(x -> x.getMatricula() == matBusca).toList();
                         if (!resultado.isEmpty()){
-                            funcionarios.removeIf(x -> x.getMatricula() == matBusca);
-                            System.out.println("Item retirado com sucesso!");
+                            System.out.println("Deseja realmente excluir esse item?...(s/n)");
+                            char userChoice1 = input.next().charAt(0);
+                            if (userChoice1 == 's') {
+                                funcionarios.removeIf(x -> x.getMatricula() == matBusca);
+                                System.out.println("Item retirado com sucesso!");
+                            }else {
+                                System.out.println("Item não retirado!");
+                            }
                         }else {
                             System.out.println("Item não cadastrado!");
                         }
