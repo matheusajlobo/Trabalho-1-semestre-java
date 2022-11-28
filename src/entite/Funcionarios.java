@@ -7,8 +7,6 @@ public class Funcionarios {
     private Double remuneracao;
     private String setor;
 
-    public Funcionarios() {
-    }
     public Funcionarios(Integer matricula, String nome, String cargo, String setor, Double remuneracao) {
         this.nome = nome;
         this.matricula = matricula;
