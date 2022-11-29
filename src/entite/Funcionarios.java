@@ -1,5 +1,7 @@
 package entite;
-
+/*
+    Classe Funcionarios, define os dados necessarios para se atribuir um funcionario ao programa.
+*/
 public class Funcionarios {
     private String nome;
     private Integer matricula;
