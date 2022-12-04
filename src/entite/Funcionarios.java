@@ -1,10 +1,12 @@
 package entite;
+
+
 /*
     Classe Funcionarios, define os dados necessarios para se atribuir um funcionario ao programa.
 */
-public class Funcionarios {
+public class Funcionarios implements Comparable<Funcionarios> { //implemetação da interface Comparable para comparação e ordenação dos itens da lista
     private String nome;
-    private Integer matricula;
+    private final Integer matricula;
     private String cargo;
     private Double remuneracao;
     private String setor;
@@ -27,10 +29,6 @@ public class Funcionarios {
 
     public Integer getMatricula() {
         return matricula;
-    }
-
-    public void setMatricula(Integer matricula) {
-        this.matricula = matricula;
     }
 
     public String getCargo() {
@@ -59,7 +57,7 @@ public class Funcionarios {
 
     @Override
     public String toString() {
-        return "Matrícula: "
+        return "\nMatrícula: "
               + String.format("%d, ",getMatricula())
               + "Nome: "
               + getNome()
@@ -68,6 +66,11 @@ public class Funcionarios {
               + ", Setor: "
               + getSetor()
               + ", Remuneração: "
-              + String.format("%.2f", getRemuneracao())  ;
+              + String.format("%.2f%n", getRemuneracao())  ;
+    }
+
+    @Override
+    public int compareTo(Funcionarios alphaCrescFuncionarios) {
+        return this.nome.compareTo(alphaCrescFuncionarios.getNome());
     }
 }
