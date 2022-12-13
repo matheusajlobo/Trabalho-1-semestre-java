@@ -7,9 +7,12 @@ import java.util.*;
 
 public class Principal {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+
+        Scanner input = new Scanner(System.in); // instanciando o Scanner
+
         List<Funcionarios> funcionarios = new ArrayList<>(); // declaração da lista da classe Funcionarios
-        int userChoice;
+
+        int userChoice; // variable para armazenar o input do usuário
 
         // Implementação de dados para teste
         funcionarios.add(new Funcionarios(127222, "Amanda Cerqueira", "Estudante", "TI", 0.00));
@@ -26,9 +29,9 @@ public class Principal {
             System.out.println();
             userChoice = input.nextInt();
 
-            switch (userChoice) { //estrutura condicional para naveação do menu
+            switch (userChoice) { // estrutura condicional para naveação do menu
 
-                case 1://recebe dados e cadastra o item na lista
+                case 1:// recebe dados e cadastra o item na lista
                     System.out.print("\nDigite o numero da matricula: ");
                     int matricula = input.nextInt();
                     input.nextLine();
@@ -42,7 +45,7 @@ public class Principal {
                     double remuneracao = input.nextDouble();
                     System.out.println("O funcionario possui dependentes?...(y/n)");
                     char userChoice_1 = input.next().charAt(0);
-                    if(userChoice_1=='y'||userChoice_1=='Y'){
+                    if(userChoice_1 =='y'|| userChoice_1=='Y'){ // estrutura condicional com tratamento de dados para verificar se o usuário possui dependentes
                         System.out.print("\nDigite o id do dependente: ");
                         int idDep = input.nextInt();
                         input.nextLine();
@@ -71,7 +74,7 @@ public class Principal {
                         System.out.println("Sem itens cadastrados!");
                     break;
 
-                case 3:/*realiza uma busca na lista atravez de uma expressão lambda*/
+                case 3:/*realiza uma busca na lista através de uma expressão lambda*/
                     System.out.print("\nDigite o numero da matricula: ");
                     int matBusca = input.nextInt();
                     if (!funcionarios.isEmpty()) {
@@ -90,7 +93,7 @@ public class Principal {
                     System.out.println("Digite o numero da matricula: ");
                     matBusca = input.nextInt();
                     if (!funcionarios.isEmpty()) {
-                        //busca o numero do item digitado, ultilizado para verificar a existencia do item.
+                        //busca o número do item digitado, ultilizado para verificar a existencia do item.
                         List<Funcionarios> resultado = funcionarios.stream().filter(x -> x.getMatricula() == matBusca).toList();
                         if (!resultado.isEmpty()) {//
                             System.out.println("Deseja realmente excluir esse item?...(s/n)");
@@ -161,7 +164,7 @@ public class Principal {
 
                                         }
                                         if (userChoice_2 != 5) {
-                                            System.out.printf("Aterações na matricula: %d%n", list.getMatricula());
+                                            System.out.printf("Auterações na matricula: %d%n", list.getMatricula());
                                             System.out.printf("%n%s  %s  %s  %s %s  %n", "1 - NOME", "2 - CARGO", "3 - SETOR", "4 - REMUNERAÇÃO", "5- SAIR");
                                         }
                                     }while (userChoice_2!=5);
@@ -196,7 +199,7 @@ public class Principal {
                     break;
 
                 default:
-                    System.out.println("Digite um comando valido!");
+                    System.out.println("Digite um comando valido!"); // tratando erro de input do usuário
                     break;
             }
             if (userChoice != 7) {
@@ -204,7 +207,7 @@ public class Principal {
                         "MENU#", "1 - CADASTRAR", "2 - LISTAR", "3 - BUSCAR", "4 - EXCLUIR", "5 - ATUALIZAR ","6 - ORDENAR", "7 - SAIR");
             }
         } while (userChoice != 7);
-        System.out.println("Sistema encerrado pelo Usuario");
+        System.out.println("Sistema encerrado pelo Usuario"); // informando o termino do programa
 
         input.close();
     }
