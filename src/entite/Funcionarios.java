@@ -11,6 +11,7 @@ public class Funcionarios implements Comparable<Funcionarios> { //implemetação
     private Double remuneracao;
     private String setor;
 
+    // criando um construtor para tornar obrigatorio a inserção de alguns dados ao instanciar a classe
     public Funcionarios(Integer matricula, String nome, String cargo, String setor, Double remuneracao) {
         this.nome = nome;
         this.matricula = matricula;

@@ -1,11 +1,12 @@
 package entite;
 
-public class Dependentes extends Funcionarios{
+public class Dependentes extends Funcionarios{ //extendendo da classe Funcionarios
     private final Integer id;
     private String nomeDep;
     private String parentesco;
     private Integer idade;
 
+    // criando um construtor para tornar obrigatorio a inserção de alguns dados ao instanciar a classe
     public Dependentes(Integer matricula, String nome, String cargo, String setor, Double remuneracao, Integer id, String nomeDep, String parentesco, Integer idade) {
         super(matricula, nome, cargo, setor, remuneracao);
         this.id = id;
@@ -13,6 +14,8 @@ public class Dependentes extends Funcionarios{
         this.parentesco = parentesco;
         this.idade = idade;
     }
+
+    // criando getter e setter
 
     public Integer getId() {
 
@@ -48,6 +51,7 @@ public class Dependentes extends Funcionarios{
         this.idade = idade;
     }
 
+    // realizando a sobrescrição do toString
     @Override
     public String toString() {
         return super.toString()
