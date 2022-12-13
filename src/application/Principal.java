@@ -98,7 +98,7 @@ public class Principal {
                         if (!resultado.isEmpty()) {//
                             System.out.println("Deseja realmente excluir esse item?...(s/n)");
                             char userChoice1 = input.next().charAt(0);
-                            if (userChoice1 == 's') {
+                            if (userChoice1 == 's'|| userChoice1 == 'S') {
                                 //expressão responsavel pela exclusão do item
                                 funcionarios.removeIf(x -> x.getMatricula() == matBusca);
                                 System.out.println("Item retirado com sucesso!");
